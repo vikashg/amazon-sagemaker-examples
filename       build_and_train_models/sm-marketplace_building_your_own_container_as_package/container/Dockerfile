@@ -2,14 +2,13 @@
 # This is a Python 2 image that uses the nginx, gunicorn, flask stack
 # for serving inferences in a stable way.
 
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 MAINTAINER Amazon AI <sage-learner@amazon.com>
 
-
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
          wget \
-         python \
+         python-is-python3 \
          nginx \
          ca-certificates \
     && rm -rf /var/lib/apt/lists/*
